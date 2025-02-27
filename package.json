@@ -13,6 +13,7 @@
     "@heroui/react": "^2.7.2",
     "@heroui/system": "^2.4.10",
     "@heroui/theme": "^2.4.9",
+    "@internationalized/date": "^3.7.0",
     "@tailwindcss/typography": "^0.5.16",
     "axios": "^1.7.9",
     "daisyui": "^4.12.24",
