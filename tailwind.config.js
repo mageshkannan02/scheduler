@@ -86,8 +86,8 @@ module.exports = {
 						},
 					},
 					colors: {
-						primary: {
-							DEFAULT: '#FF7014',
+						primary: {   // green related colours are primary
+							DEFAULT: '#00825F',
 							foreground: '#FFEFE5',
 						 
 						},
