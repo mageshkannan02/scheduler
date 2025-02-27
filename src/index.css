@@ -3,4 +3,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+:root {
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-source-sans-3: 'Source Sans 3', sans-serif;
+    --font-inter: 'Inter', sans-serif;
+}

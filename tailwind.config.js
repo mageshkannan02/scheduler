@@ -27,7 +27,9 @@ module.exports = {
      
     },
     fontFamily: {
-      
+		mont: ['var(--font-montserrat)', 'sans-serif'],
+		source: ['var(--font-source-sans-3)', 'sans-serif'],
+		inter: ['Inter', 'sans-serif'],
     },
     fontWeight: {
       regular: '400',
