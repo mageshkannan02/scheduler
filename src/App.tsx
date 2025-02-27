@@ -1,12 +1,15 @@
-import { Button } from "@heroui/react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { PublicRoutes } from "@/routes";
 
 
 
-export default function App() {
-  return (
-    <div className="!h-[100vh] w-full flex justify-center items-center">
-
-      <Button className=" text-white !bg-success font-mono" >BIT SCHEDULER</Button>
-    </div>
-  );
+function App() {
+    return (
+        <Router>
+          
+            <PublicRoutes />
+        </Router>
+    );
 }
+
+export default App;
