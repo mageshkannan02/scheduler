@@ -17,37 +17,37 @@ export const Deepak = () => {
       <div className="flex gap-5">
         <CustomChip
         label="11:00 am"
-        chipVariant="danger"
+        chipVariant="primary"
         variant="bordered"
         radius="lg"
         // variant?: 'solid' | 'flat' | 'bordered' | 'light' | 'faded' | 'shadow' | 'dot';
         />
         <CustomChip
         label="hello"
-        chipVariant="success"
+        chipVariant="neutralLight"
         variant="dot"
         />
         <CustomChip
         label="hello"
-        chipVariant="danger"
+        chipVariant="neutral"
         variant="bordered"
         />
         <CustomChip
         label="hello"
-        chipVariant="success"
+        chipVariant="danger"
         />
         <CustomChip
         label="hello"
-        chipVariant="danger"
+        chipVariant="success"
         variant="dot"
         />
         <CustomChip
         label="hello"
-        chipVariant="neutralLight"
+        chipVariant="warningLight"
         />
         <CustomChip
         label="hello"
-        chipVariant="warningLight"
+        chipVariant="warning"
         />
       </div>
       <ScheduleChip

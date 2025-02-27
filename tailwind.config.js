@@ -86,10 +86,10 @@ module.exports = {
 						},
 					},
 					colors: {
-						primary: {
-							DEFAULT: '#FF7014',
+						primary: {   // green related colours are primary
+							DEFAULT: '#00825F',
 							foreground: '#FFEFE5',
-						 
+							
 						},
 						secondary: {
 							DEFAULT: '#65686F',
@@ -122,8 +122,10 @@ module.exports = {
 			 
 						} ,
 						content2: {
-							DEFAULT: '#555E68',
+							DEFAULT: '#25272D',
 							foreground: '#EDF1F5',
+							'400' : '#464646',
+							'800' : '#25272D',
 					 
 						} ,
 

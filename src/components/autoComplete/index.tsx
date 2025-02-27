@@ -60,7 +60,7 @@ export const AutoComplete: React.FC<AutoCompleteProps> = ({
   return (
     <div id={id} className={cn('h-fit w-full bg-transparent', classNames?.base)}>
       {/* Label */}
-      <div className={cn('font-regular text-[14px] text-[#25272D] mb-4', classNames?.label)}>
+      <div className={cn('font-regular text-[14px] text-content2 mb-4', classNames?.label)}>
         {label}
       </div>
 
@@ -82,7 +82,7 @@ export const AutoComplete: React.FC<AutoCompleteProps> = ({
       </Autocomplete>
 
       {/* Description */}
-      <div className={cn('text-[#464646] font-regular text-[12px]', classNames?.description)}>
+      <div className={cn('text-content2-400 font-regular text-[12px]', classNames?.description)}>
         {description}
       </div>
     </div>
