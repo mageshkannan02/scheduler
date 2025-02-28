@@ -1,3 +1,8 @@
+export { InfraIcon } from './infraIcon';
+export { RolesIcon } from './rolesIcon';
+export { SheduleIcon } from './sheduleIcon';
+export { UploadIcon } from './uploadIcon';
+export { UserIcon } from './userIcon';
 export { CakeIcon } from './cakeIcon';
 export { LocationIcon } from './locationIcon';
 export { ClockIcon } from './clockIcon';
