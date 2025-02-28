@@ -66,7 +66,7 @@ export const DatePickerComponent = ({
         isReadOnly={isReadOnly}
         value={selectedDate}
         startContent={<div className={cn("pointer-events-none flex items-center",classNames?.startIcon)}>{startIcon}</div>}
-                endContent={<div className={cn("pointer-events-none flex items-center",classNames?.endIcon)}>{endIcon}</div>}
+        endContent={<div className={cn("pointer-events-none flex items-center",classNames?.endIcon)}>{endIcon}</div>}
         onChange={handleChange}
         maxValue={today(getLocalTimeZone())}
         granularity={showTime ? "minute" : "day"} // Now correctly applies only when showTime is enabled
