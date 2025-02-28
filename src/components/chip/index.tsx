@@ -35,8 +35,8 @@ const borderColorSourceMap = {
 };
 
 const dotColorSourceMap = {
-    success : 'bg-green-700',
-    danger : 'bg-red-700',
+    success : 'bg-green-500',
+    danger : 'bg-red-500',
 };
 
 // Extending ChipProps from NextChip to ensure compatibility
@@ -53,7 +53,11 @@ export interface CustomChipProps extends Omit<NextChipProps, 'color'> {
     radius?: 'none' | 'sm' | 'md' | 'lg' | 'full';
     textClassName?: string;
     baseClassName?: string;
+    closeButtonClass?: string;
     variant?: 'solid' | 'flat' | 'bordered' | 'light' | 'faded' | 'shadow' | 'dot';
+    remainingSeats?: number;
+    handleClick?: () => void;
+    handleClose?: () => void;
 }
 
 export const CustomChip = ({
@@ -68,25 +72,29 @@ export const CustomChip = ({
     endContent,
     startContent,
     chipVariant,
+    remainingSeats,
     textClassName,
     baseClassName,
+    closeButtonClass,
+    handleClick = () => {},
+    handleClose = () => {},
     ...rest
 }: CustomChipProps) => {
     const backgroundColorClass = isDisabled
-        ? 'bg-gray-100'
+        ? 'bg-[#EDEDED80]'
         : bgColorSourceMap[chipVariant as keyof typeof bgColorSourceMap] || '';
 
     const labelColorClass = isDisabled
-        ? 'text-gray-300'
+        ? 'text-[#8E8E8E80]'
         : LabelColorSourceMap[chipVariant as keyof typeof LabelColorSourceMap] || '';
 
     const borderColorClass = isDisabled
-        ? 'border-gray-300'
+        ? 'border-[#8E8E8E80]'
         : variant === 'bordered'
         ? borderColorSourceMap[chipVariant as keyof typeof borderColorSourceMap] || ''
         : 'border-transparent';
 
-    const dotColorClass = dotColorSourceMap[chipVariant as keyof typeof dotColorSourceMap] || '';
+    const dotColorClass = isDisabled ? 'bg-gray-500/30' : dotColorSourceMap[chipVariant as keyof typeof dotColorSourceMap];
 
     return (
         <NextChip
@@ -95,14 +103,21 @@ export const CustomChip = ({
             radius={radius}
             variant={variant}
             isDisabled={isDisabled}
-            endContent={endContent}
             isCloseable={isCloseable}
             startContent={startContent}
-            className={cn('cursor-pointer border', borderColorClass, chipClass)}
+            endContent={
+                remainingSeats !== undefined && 
+                <div className={cn("pointer-events-none flex justify-center items-center w-[22px] h-[22px] bg-[#777777] rounded-full text-[10px] font-source text-[#FDFDFD] font-bold")}>
+                    {remainingSeats !== undefined && (remainingSeats === 0 ? 0 : remainingSeats > 0 && remainingSeats < 10 ? `0${remainingSeats}` : remainingSeats)}
+                </div>}
+            onClick={handleClick}
+            onClose={isCloseable ? handleClose : undefined}
+            className={cn('cursor-pointer border',isDisabled && '!cursor-not-allowed', borderColorClass, chipClass)}
             classNames={{
-                base: cn('font-source gap-[6px] px-2', backgroundColorClass, baseClassName),
+                base: cn('font-source gap-[6px] py-4 px-2.5', backgroundColorClass, baseClassName),
                 content: cn(labelColorClass, 'font-source font-medium !text-body3 px-0', textClassName),
                 dot: cn('w-[6px] h-[6px]',dotColorClass),
+                closeButton: cn('text-[#FB374880]',closeButtonClass)
             }}
             {...rest}
         >

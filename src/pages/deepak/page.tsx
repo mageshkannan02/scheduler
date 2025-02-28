@@ -1,5 +1,5 @@
 import { CakeIcon, ClockIcon, LocationIcon, SearchIcon } from "@/assets"
-import { AutoComplete, CustomChip, DatePickerComponent, InputField, MobileInput, ScheduleChip, SetPriority } from "@/components"
+import { AssignRolescard, AssignVenueCard, AutoComplete, CustomChip, DatePickerComponent, InputField, MobileInput, ScheduleChip, SetPriority } from "@/components"
 
 const options = [
     { label: '7376231CS130', key: '7376231CS130' },
@@ -20,12 +20,22 @@ export const Deepak = () => {
         chipVariant="primary"
         variant="bordered"
         radius="lg"
+        remainingSeats={0}
         // variant?: 'solid' | 'flat' | 'bordered' | 'light' | 'faded' | 'shadow' | 'dot';
         />
         <CustomChip
         label="hello"
-        chipVariant="neutralLight"
+        chipVariant="success"
         variant="dot"
+        // isDisabled={true}
+        // isCloseable={true}
+        // endContent={1}
+        />
+        <CustomChip
+        label="hello"
+        chipVariant="danger"
+        variant="dot"
+        isCloseable = {true}
         />
         <CustomChip
         label="hello"
@@ -33,17 +43,14 @@ export const Deepak = () => {
         variant="bordered"
         />
         <CustomChip
-        label="hello"
+        label="hellodk"
         chipVariant="danger"
         />
-        <CustomChip
-        label="hello"
-        chipVariant="success"
-        variant="dot"
-        />
+        
         <CustomChip
         label="hello"
         chipVariant="warningLight"
+        
         />
         <CustomChip
         label="hello"
@@ -141,7 +148,51 @@ export const Deepak = () => {
       // unit="kg"
       onInputChange = {() => {}}
       />
-      
+      <AssignRolescard
+      id=""
+      classNames={{}}
+      isSelected={true}
+      avatar="https://wallpapers.com/images/hd/cute-cat-eyes-profile-picture-uq3edzmg1guze2hh.jpg"
+      assignedRole="HOD"
+      count={0}
+      setIsSelected={() => {}}
+      />
+      <AssignRolescard
+      id=""
+      classNames={{}}
+      isSelected={true}
+      avatar="https://wallpapers.com/images/hd/cute-cat-eyes-profile-picture-uq3edzmg1guze2hh.jpg"
+      assignedRole="HOD"
+      numberOfPeople={11}
+      setIsSelected={() => {}}
+      />
+      <AssignRolescard
+      id=""
+      classNames={{}}
+      isSelected={true}
+      avatar="https://wallpapers.com/images/hd/cute-cat-eyes-profile-picture-uq3edzmg1guze2hh.jpg"
+      assignedRole="HOD"
+      setIsSelected={() => {}}
+      />
+      <AssignVenueCard
+      id=""
+      classNames={{}}
+      isSelected={true}
+      avatar="https://wallpapers.com/images/hd/cute-cat-eyes-profile-picture-uq3edzmg1guze2hh.jpg"
+      assignedVenue="IT Lab 01"
+      numberOfSeats={50}
+      setIsSelected={() => {}}
+      />
+      <AssignVenueCard
+      id=""
+      classNames={{}}
+      isSelected={true}
+      avatar="https://wallpapers.com/images/hd/cute-cat-eyes-profile-picture-uq3edzmg1guze2hh.jpg"
+      assignedVenue="SF Seminar Hall"
+      numberOfSeats={50}
+      priority="low"
+      setIsSelected={() => {}}
+      />
     </div>
   )
 }
