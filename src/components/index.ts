@@ -8,3 +8,6 @@ export { MobileInput } from './mobileInput/index';
 export { ScheduleChip } from './scheduleChip/index';
 export { SetPriority } from './setPriority/index';
 export { AutoComplete } from "./autoComplete/index"
+export { DialogModal } from './modals/index';
+export { FileUpload } from './fileUpload'
+export { ImageUpload } from './imageUpload'
