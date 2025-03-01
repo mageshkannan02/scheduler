@@ -3,7 +3,7 @@ import { RolesIcon } from "@/assets/rolesIcon";
 import { SheduleIcon } from "@/assets/sheduleIcon";
 import { UploadIcon } from "@/assets/uploadIcon";
 import { UserIcon } from "@/assets/userIcon";
-import { Steppers } from "@/components";
+import { DialogModal, FileUpload, ImageUpload, Steppers } from "@/components";
 import { ButtonComponent } from "@/components/button";
 import { TabsComp } from "@/components/tabs";
 import React from "react";
@@ -40,7 +40,7 @@ const steps = [
 	{ number: 5, label: 'Health', completed: false },
 	{ number: 6, label: 'Additional info', completed: false },
 ];
-
+const [open, setopen] = React.useState<boolean>(false);
   const [selectedTab, setSelectedTab] = React.useState<string>(tabItems[0]?.key || "");
   return (
     <div className="!h-[100vh] w-full flex flex-col justify-center items-center bg-gray-200">
@@ -50,6 +50,7 @@ const steps = [
       id="button"
       text="Hello"
       className="bg-primary"
+      onClick={()=>{setopen(true)}}
       startIcon={<UploadIcon/>}
       />
       <TabsComp
@@ -66,6 +67,95 @@ const steps = [
       <Steppers
       steps={steps}
       />
+      <DialogModal
+      customCloseButton={<SheduleIcon/>}
+      id='wallet-checkout-modal'
+			title='Checkout'
+      // startIconHeader = {<SheduleIcon/>}
+			isOpen={open}
+			onClose={()=>{setopen(false);}}
+			modalBackgroundClass='bg-white'
+			size='xl'
+			footerClassName='pb-[1.5rem]'
+			bodyContent={
+				<div>
+					<div className='flex items-center mb-4 border  rounded-2xl border-background-500 px-6 bg-white w-35.75 pt-1  pb-[1.5rem] gap-4'>
+					
+						<div className='flex flex-col'>
+							<div className='flex items-center gap-2 mt-4'>
+								<h3
+									className='text-sm font-medium leading-5 text-foreground'
+									id='wallet-checkout-plan-name'
+								>
+									Customize Plan
+								</h3>
+							</div>
+							<p
+								className='text-sm text-background-800 leading-5 font-regular mt-2 mb-1'
+								id='wallet-checkout-plan-detail'
+							>
+							 Credits for Rs 
+							</p>
+							<div
+							
+								className='text-primary-500 text-xs font-medium leading-4 underline cursor-pointer'
+							>
+								Change Plan
+							</div>
+						</div>
+					</div>
+
+					<div className='mt-[1rem]'>
+						<h4 className='text-[#4E585E] leading-5 text-sm font-medium mb-2'>
+							Amount breakdown
+						</h4>
+						<div className='bg-[#F7F8FA] rounded-lg'>
+							<div className='p-[1.25rem]'>
+								<div className='flex justify-between items-center mb-3'>
+									<span className='text-foreground font-regular text-sm leading-5'>
+										Recharge Amount
+									</span>
+									<span className='font-medium text-sm leading-5 text-foreground'>
+										INR									</span>
+								</div>
+								<div className='flex justify-between items-center mb-3'>
+									<span className='text-foreground font-regular text-sm leading-5'>
+										Discount applied
+									</span>
+									<span className='font-medium text-sm leading-5 text-success-500'>
+										INR 
+									</span>
+								</div>
+								<div className='flex justify-between items-center mb-3'>
+									<span className='text-foreground font-regular text-sm leading-5'>
+										GST
+									</span>
+									<span className='font-medium text-sm leading-5 text-foreground'>
+										INR 
+									</span>
+								</div>
+							</div>
+							<hr className='border border-background-500' />
+							<div className='flex justify-between items-center mt-4 px-6 pb-4'>
+								<span className='font-medium text-base leading-[1.375rem] text-[#02111A]'>
+									Grand total
+								</span>
+								<span className='font-medium text-base leading-[1.375rem] text-[#02111A]'>
+									INR
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+			footerButtons={
+				<div className='flex max-sm:justify-between md:justify-end gap-4 w-full '>
+				sdfdsf
+				</div>
+			}/>
+
+      <FileUpload/>
+      <ImageUpload/>
     </div>
   );
 }
