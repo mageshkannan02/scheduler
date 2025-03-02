@@ -3,12 +3,13 @@ import { RolesIcon } from "@/assets/rolesIcon";
 import { SheduleIcon } from "@/assets/sheduleIcon";
 import { UploadIcon } from "@/assets/uploadIcon";
 import { UserIcon } from "@/assets/userIcon";
-import { DialogModal, FileUpload, ImageUpload, Steppers } from "@/components";
+import { DialogModal, FileUpload, ImageUpload, Steppers, TableComponent } from "@/components";
 import { ButtonComponent } from "@/components/button";
 import { TabsComp } from "@/components/tabs";
 import React from "react";
 
-
+  
+  
 export const Mukesh=()=> {
   const tabItems = [
     {
@@ -42,8 +43,147 @@ const steps = [
 ];
 const [open, setopen] = React.useState<boolean>(false);
   const [selectedTab, setSelectedTab] = React.useState<string>(tabItems[0]?.key || "");
+
+ const bodyContent = [
+	{
+	  id: 1,
+	  name: "Tony Reichert",
+	  rollNo:'7376231CS234',
+	  role: "CEO",
+	  team: "Management",
+	  status: "active",
+	  age: "29",
+	  avatar: "https://i.pravatar.cc/150?u=a042581f4e29026024d",
+	  email: "tony.reichert@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+	},
+	{
+	  id: 2,
+	  name: "Zoey Lang",
+	  role: "Tech Lead",
+	  team: "Development",
+	  status: "paused",
+	  age: "25",
+	  avatar: "https://i.pravatar.cc/150?u=a042581f4e29026704d",
+	  email: "zoey.lang@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+	{
+	  id: 3,
+	  name: "Jane Fisher",
+	  role: "Sr. Dev",
+	  team: "Development",
+	  status: "active",
+	  age: "22",
+	  avatar: "https://i.pravatar.cc/150?u=a04258114e29026702d",
+	  email: "jane.fisher@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+	{
+	  id: 4,
+	  name: "William Howard",
+	  role: "C.M.",
+	  team: "Marketing",
+	  status: "vacation",
+	  age: "28",
+	  avatar: "https://i.pravatar.cc/150?u=a048581f4e29026701d",
+	  email: "william.howard@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+	},
+	{
+	  id: 5,
+	  name: "Kristen Copper",
+	  role: "S. Manager",
+	  team: "Sales",
+	  status: "active",
+	  age: "24",
+	  avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
+	  email: "kristen.cooper@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+	{
+	  id: 6,
+	  name: "Kristen Copper",
+	  role: "S. Manager",
+	  team: "Sales",
+	  status: "active",
+	  age: "24",
+	  avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
+	  email: "kristen.cooper@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+	{
+	  id: 7,
+	  name: "Kristen Copper",
+	  role: "S. Manager",
+	  team: "Sales",
+	  status: "active",
+	  age: "24",
+	  avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
+	  email: "kristen.cooper@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+	{
+	  id: 8,
+	  name: "Kristen Copper",
+	  role: "S. Manager",
+	  team: "Sales",
+	  status: "active",
+	  age: "24",
+	  avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
+	  email: "kristen.cooper@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+	{
+	  id: 9,
+	  name: "Kristen Copper",
+	  role: "S. Manager",
+	  team: "Sales",
+	  status: "active",
+	  age: "24",
+	  avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
+	  email: "kristen.cooper@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+	{
+	  id: 10,
+	  name: "Kristen Copper",
+	  role: "S. Manager",
+	  team: "Sales",
+	  status: "active",
+	  age: "24",
+	  avatar: "https://i.pravatar.cc/150?u=a092581d4ef9026700d",
+	  email: "kristen.cooper@example.com",
+	  avatorGroup :["https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d","https://i.pravatar.cc/150?u=a042581f4e29026024d",]
+
+	},
+  ];
+ const columns= [
+	{ name: "ID", uid: "id" },
+	{ name: "NAME", uid: "name" },
+	{ name: "AGE", uid: "age" },
+	{ name: "ROLE", uid: "role" },
+	{ name: "Count of students", uid: "count" },
+	{ name: "TEAM", uid: "team" },
+	{ name: "EMAIL", uid: "email" },
+	{ name: "STATUS", uid: "status" },
+	{ name: "ACTIONS", uid: "actions" },
+  ];
+  const actionDropdown = [
+	{id:1,name:'View details',icon:<InfraIcon/>},
+    {id:2,name:'Delete',icon:<InfraIcon/>},
+    {id:3,name:'Add a subtitle',icon:<RolesIcon/>},
+	{id:4,name:'Edit Schedule',icon:<RolesIcon/>},
+  ];
   return (
-    <div className="!h-[100vh] w-full flex flex-col justify-center items-center bg-gray-200">
+    <div className=" w-full flex flex-col justify-center items-center bg-gray-200">
 
       {/* <Button className=" text-white !bg-success font-mono" >BIT SCHEDULER</Button> */}
       <ButtonComponent 
@@ -153,9 +293,12 @@ const [open, setopen] = React.useState<boolean>(false);
 				sdfdsf
 				</div>
 			}/>
+	  <TableComponent header={columns} bodyContent={bodyContent} dropdowmMenu={actionDropdown} tableHeight='h-[500px]'/>
 
       <FileUpload/>
       <ImageUpload/>
-    </div>
+
+	  {/* <TableComponent tableData={tableData} id='example-table' /> */}
+	      </div>
   );
 }
