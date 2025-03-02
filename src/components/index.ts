@@ -11,3 +11,4 @@ export { AutoComplete } from "./autoComplete/index"
 export { DialogModal } from './modals/index';
 export { FileUpload } from './fileUpload'
 export { ImageUpload } from './imageUpload'
+export { TableComponent } from './tableComponent'

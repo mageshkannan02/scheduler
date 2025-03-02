@@ -11,3 +11,4 @@ export { PdfIcon } from './pdfIcon';
 export { CloudUploadIcon } from './cloudUploadIcon'
 export { GalleryIcon } from './galleryIcon'
 export { CloseIcon } from './closeIcon'
+export { ThreeDotIcon } from './threeDotIcon'
