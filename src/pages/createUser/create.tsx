@@ -1,6 +1,8 @@
 import { InfraIcon, RolesIcon, SheduleIcon, UserIcon } from "@/assets";
 import { TabsComp } from "@/components";
 import React from "react";
+import { Mukesh } from "../mukesh/page";
+import { Deepak } from "../deepak/page";
 
 export default function CreateUser() {
   const tabItems = [
@@ -30,18 +32,30 @@ export default function CreateUser() {
   );
 
   return (
-    <div>
+    <div className="flex h-full flex-col gap-4">
       <TabsComp
         tabItems={tabItems}
         selectedTab={selectedTab}
         onTabChange={setSelectedTab}
         tabWidth="w-full"
       />
-      {selectedTab === "roles" && (
+      <div className="overflow-scroll scrollbar-hide">
+      {selectedTab === "users" && (
         <div className="mt-4">
-          <h2>This is the roles section content.</h2>
+          <Mukesh/>
         </div>
       )}
+       {selectedTab === "roles" && (
+        <div className="mt-4">
+          <Deepak/>
+        </div>
+      )}
+       {selectedTab === "infra" && (
+        <div className="mt-4">
+          <Mukesh/>
+        </div>
+      )}
+      </div>
     </div>
   );
 }

@@ -4,12 +4,10 @@ import { Outlet } from "react-router-dom";
 const MainLayout = () => {
 
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="flex-1 min-h-screen bg-gray-100">
-        <main className="p-6">
+    <div className="flex ">
+     <div className="w-[88px]"><Sidebar /></div> 
+      <div className="flex-1 p-4 overflow-scroll scrollbar-hide h-screen bg-gray-100">
           <Outlet />
-        </main>
       </div>
     </div>
   );
