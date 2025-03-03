@@ -71,7 +71,7 @@ export const TableComponent = ({
     const start = (page - 1) * rowsPerPage;
     const end = start + rowsPerPage;
     return bodyContent?.slice(start, end);
-  }, [page, rowsPerPage]);
+  }, [bodyContent, page, rowsPerPage]);
 
 
   const renderCell = React.useCallback((user: User, columnKey: React.Key) => {
@@ -117,7 +117,7 @@ export const TableComponent = ({
       default:
         return cellValue;
     }
-  }, []);
+  }, [dropdowmMenu]);
 
   const bottomContent = (
     <div className=" flex justify-between items-center rounded-b-lg mt-[-16px] p-2 bg-white">

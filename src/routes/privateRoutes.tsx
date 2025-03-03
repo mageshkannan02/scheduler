@@ -1,14 +1,20 @@
-import { Routes } from "react-router-dom";
-import { PrivateRoute } from "./privateRoute";
-import { Magesh, Mukesh } from "@/pages";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MainLayout from "../layout/mainlayout";
+import CreateUser from "@/pages/createUser/create";
+import { ScheduleView } from "@/pages/scheduleView/page";
+import { Schedulelist } from "@/pages/scheduleList/page";
 
 export const PrivateRoutes = () => {
   return (
-    <Routes>
-      <PrivateRoute>
-        <Magesh />
-        <Mukesh />
-      </PrivateRoute>
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route path="create" element={<CreateUser />} />
+          <Route path="view" element={<ScheduleView />} />
+          <Route path="folder" element={<Schedulelist />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };
+

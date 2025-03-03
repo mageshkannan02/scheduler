@@ -1,12 +1,9 @@
-import { Button } from "@heroui/react"
-
+import { Sidebar } from "@/components"
 
 export const Magesh = () => {
   return (
     <div>
-      <p className="font-mono">magesh</p>
-    
-      <Button  className="bg-red-500">hello</Button>
+     <Sidebar/>
     </div>
   )
 }
