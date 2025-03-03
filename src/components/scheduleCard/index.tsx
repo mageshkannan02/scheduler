@@ -13,7 +13,7 @@ export interface CustomChipProps {
   createdBy?: string;
 }
 
-export const ScheduleChip = (props: CustomChipProps) => {
+export const ScheduleCard = (props: CustomChipProps) => {
     const { id , classNames } = props;
   return (
     <div 
