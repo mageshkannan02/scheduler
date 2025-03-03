@@ -13,3 +13,7 @@ export { AssignVenueCard } from './assignVenueCard/index';
 export { CustomInput } from './customInput';
 export { VenueNotAvailabe } from './venueNotAvailable';
 export { Calendar } from './Calender';
+export { DialogModal } from './modals/index';
+export { FileUpload } from './fileUpload'
+export { ImageUpload } from './imageUpload'
+export { TableComponent } from './tableComponent'
