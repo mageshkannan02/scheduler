@@ -3,6 +3,7 @@ import { TabsComp } from "@/components";
 import React from "react";
 import { Mukesh } from "../mukesh/page";
 import { Deepak } from "../deepak/page";
+import { Infrasection } from "./components/infrasection";
 
 export default function CreateUser() {
   const tabItems = [
@@ -52,7 +53,7 @@ export default function CreateUser() {
       )}
        {selectedTab === "infra" && (
         <div className="mt-4">
-          <Mukesh/>
+          <Infrasection/>
         </div>
       )}
       </div>
