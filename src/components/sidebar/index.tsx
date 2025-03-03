@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 export const Sidebar = () => {
   const [selected, setSelected] = React.useState<string | null>("category");
   return (
-    <div className="h-screen  w-[88px] flex flex-col justify-between items-center border-1 pt-4 pb-14">
+    <div className="h-screen  w-full flex flex-col justify-between items-center border-1 pt-4 pb-14">
       <div className="flex flex-col gap-12">
         <BitSchedulerLogo />
         <div className="flex gap-3 flex-col">
