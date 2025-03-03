@@ -1,5 +1,5 @@
-import { CakeIcon, ClockIcon, LocationIcon, SearchIcon } from "@/assets"
-import { AutoComplete, CustomChip, DatePickerComponent, InputField, MobileInput, ScheduleChip, SetPriority } from "@/components"
+import { CakeIcon, ClockIcon, LocationIcon, SearchIcon, VenueNotAvailabeImage } from "@/assets"
+import { AssignRolescard, AssignVenueCard, AutoComplete, Calendar, CustomChip, CustomInput, DatePickerComponent, InputField, MobileInput, ScheduleCard, SetPriority, VenueNotAvailabe } from "@/components"
 
 const options = [
     { label: '7376231CS130', key: '7376231CS130' },
@@ -10,22 +10,34 @@ const options = [
 export const Deepak = () => {
   return (
     <div className="!h-[100vh] w-full space-y-10 p-10">
+      <Calendar/>
       <SetPriority
       id = 'prioprities'
       classNames={{}}
       />
+      {/* Chips */}
       <div className="flex gap-5">
         <CustomChip
         label="11:00 am"
         chipVariant="primary"
         variant="bordered"
         radius="lg"
+        remainingSeats={0}
         // variant?: 'solid' | 'flat' | 'bordered' | 'light' | 'faded' | 'shadow' | 'dot';
         />
         <CustomChip
         label="hello"
-        chipVariant="neutralLight"
+        chipVariant="success"
         variant="dot"
+        // isDisabled={true}
+        // isCloseable={true}
+        // endContent={1}
+        />
+        <CustomChip
+        label="hello"
+        chipVariant="danger"
+        variant="dot"
+        isCloseable = {true}
         />
         <CustomChip
         label="hello"
@@ -33,24 +45,21 @@ export const Deepak = () => {
         variant="bordered"
         />
         <CustomChip
-        label="hello"
+        label="hellodk"
         chipVariant="danger"
         />
-        <CustomChip
-        label="hello"
-        chipVariant="success"
-        variant="dot"
-        />
+        
         <CustomChip
         label="hello"
         chipVariant="warningLight"
+        
         />
         <CustomChip
         label="hello"
         chipVariant="warning"
         />
       </div>
-      <ScheduleChip
+      <ScheduleCard
       id=""
       classNames={{}}
       title="Chairman Meeting"
@@ -105,8 +114,8 @@ export const Deepak = () => {
       placeholder = 'Enter value'
       defaultValue = ''
       variant = 'flat'
-      countryCodeStartIcon = {<LocationIcon/>}
-      countryCodeEndIcon = {<LocationIcon/>}
+      startIcon = {<LocationIcon/>}
+      endIcon = {<LocationIcon/>}
       description = 'Select an option from the dropdown'
       options={options}
     //   isReadOnly = {true}
@@ -137,9 +146,46 @@ export const Deepak = () => {
       startIcon = {<SearchIcon/>}
       variant = 'bordered'
       type = 'text'
-    //   isReadOnly = {true}
+      radius="full"
+      // isReadOnly = {true}
       // unit="kg"
       onInputChange = {() => {}}
+      />
+      <AssignRolescard
+      id=""
+      classNames={{}}
+      isSelected={true}
+      avatar="https://wallpapers.com/images/hd/cute-cat-eyes-profile-picture-uq3edzmg1guze2hh.jpg"
+      assignedRole="HOD"
+      numberOfPeople={11}
+      setIsSelected={() => {}}
+      />
+      <AssignVenueCard
+      id=""
+      classNames={{}}
+      isSelected={true}
+      avatar="https://wallpapers.com/images/hd/cute-cat-eyes-profile-picture-uq3edzmg1guze2hh.jpg"
+      assignedVenue="IT Lab 01"
+      numberOfSeats={50}
+      setIsSelected={() => {}}
+      />
+      <CustomInput
+      id=""
+      classNames={{}}
+      isReadOnly = {false}
+      label = "Facilities to be added"
+      placeholder = ''
+      type = 'text'
+      radius = 'lg'
+      variant = 'flat'
+      onInputChange={() => {}}
+      />
+      <VenueNotAvailabe
+      id = ''
+      classNames  = {{}}
+      avatar = {<VenueNotAvailabeImage/>}
+      title = 'Venue not available'
+      description = 'Try altering the time to check for venue availability'
       />
       
     </div>

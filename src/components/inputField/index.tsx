@@ -23,6 +23,7 @@ interface AutoCompleteProps {
   description?: string;
   unit?: string ;
   variant?: "flat" | "bordered" | "underlined" | "faded";
+  radius?: "sm" | "md" | "lg" | "full" | "none" ;
   onInputChange?: (value: string) => void;
 }
 
@@ -40,6 +41,7 @@ export const InputField = ({
   type = 'text',
   description = 'Description Text',
   unit,
+  radius = 'lg',
   variant = 'flat',
   onInputChange,
   ...rest
@@ -74,6 +76,7 @@ export const InputField = ({
         classNames={{
           inputWrapper: variant !== 'bordered' ? 'bg-[#F8FAFB] hover:bg-[#F8FAFB]' : '',
         }}        
+        radius={radius}
         variant={variant}
         isReadOnly = {isReadOnly}
         value={inputValue}
