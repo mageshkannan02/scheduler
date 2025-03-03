@@ -1,5 +1,5 @@
-import { CakeIcon, ClockIcon, LocationIcon, SearchIcon, VenueNotAvailabeImage } from "@/assets"
-import { AssignRolescard, AssignVenueCard, AutoComplete, Calendar, CustomChip, CustomInput, DatePickerComponent, InputField, MobileInput, ScheduleCard, SetPriority, VenueNotAvailabe } from "@/components"
+import { CakeIcon, ClockIcon, LocationIcon, NotificationIcon, QuestionIcon, SearchIcon, VenueNotAvailabeImage } from "@/assets"
+import { AssignRolescard, AssignVenueCard, AutoComplete, Calendar, CustomChip, CustomInput, DatePickerComponent, HeaderComponent, InputField, MobileInput, ScheduleCard, SetPriority, VenueNotAvailabe } from "@/components"
 
 const options = [
     { label: '7376231CS130', key: '7376231CS130' },
@@ -10,6 +10,15 @@ const options = [
 export const Deepak = () => {
   return (
     <div className="!h-[100vh] w-full space-y-10 p-10">
+      <HeaderComponent
+      id = ''
+      classNames = {{}}
+      header = "dashboard"
+      notificationOnClick = {() => {}}
+      avatar = "https://heroui.com/images/hero-card-complete.jpeg"
+      alt = "Profile hello"
+      // notificationIcon = {<QuestionIcon/>}
+      />
       <Calendar/>
       <SetPriority
       id = 'prioprities'

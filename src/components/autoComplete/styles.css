@@ -1,5 +1,8 @@
 [data-slot="input-wrapper"] {
     background-color: #F8FAFB !important;
+    height: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .scrollbar-none {
     -ms-overflow-style: none; /* Hide scrollbar in IE & Edge */

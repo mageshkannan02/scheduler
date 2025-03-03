@@ -10,11 +10,11 @@ interface HorizontalStepperProps {
 
 export const Steppers = ({ steps }: HorizontalStepperProps) => {
 	return (
-		<div className='flex items-center w-full px-4'>
+		<div className='flex items-center w-auto px-4'>
 			{steps?.map((step, index) => (
 				<div 
 					key={step.number} 
-					className={`flex items-center ${index === steps?.length - 1 ? 'justify-end' : 'w-full'}`}>
+					className={`flex items-center w-auto`}>
 					{/* Step Circle */}
 					<div className='flex flex-col items-center'>
 						<div
@@ -49,7 +49,7 @@ export const Steppers = ({ steps }: HorizontalStepperProps) => {
 
                         {/* Step Label */}
                         <div
-							className={`mt-2 text-h7 font-medium  ${step?.completed || steps?.find((s) => !s?.completed)?.number === step?.number
+							className={`mt-2 text-h7 font-medium whitespace-nowrap ${step?.completed || steps?.find((s) => !s?.completed)?.number === step?.number
 								? 'text-primary '
 								: 'text-[#465668]'
 							}`}
@@ -61,7 +61,7 @@ export const Steppers = ({ steps }: HorizontalStepperProps) => {
 
 					{/* Step Line (only if not last step) */}
 					{index < steps?.length - 1 && (
-						<div className={`flex-grow h-0.5 m-4 mt-[-5px] ${step?.completed ? 'bg-primary' : 'bg-[#A1AEBE]'}`}></div>
+						<div className={`w-[80px] h-0.5 m-4 mt-[-5px] ${step?.completed ? 'bg-primary' : 'bg-[#A1AEBE]'}`}></div>
 					)}
 				</div>
 			))}
