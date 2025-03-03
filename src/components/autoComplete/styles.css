@@ -1,0 +1,10 @@
+[data-slot="input-wrapper"] {
+    background-color: #F8FAFB !important;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none; /* Hide scrollbar in IE & Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari */
+  }

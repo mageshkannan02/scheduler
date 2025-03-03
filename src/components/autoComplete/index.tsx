@@ -1,6 +1,7 @@
 import { Autocomplete, AutocompleteItem } from '@heroui/react';
 import { cn } from '@heroui/theme';
 import React, { useState } from 'react';
+import './styles.css';
 
 interface List {
   key?: string;
@@ -18,8 +19,6 @@ interface AutoCompleteProps {
   label?: string;
   placeholder?: string;
   defaultValue?: string;
-  countryCodeStartIcon?: React.ReactNode;
-  countryCodeEndIcon?: React.ReactNode;
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   description?: string;
@@ -35,8 +34,8 @@ export const AutoComplete: React.FC<AutoCompleteProps> = ({
   label = 'Select Item',
   placeholder = 'Enter value',
   defaultValue = '',
-  countryCodeStartIcon = null,
-  countryCodeEndIcon = null,
+  startIcon = null,
+  endIcon = null,
   description = 'Select an option from the dropdown',
   options,
   variant = 'flat',
@@ -74,13 +73,12 @@ export const AutoComplete: React.FC<AutoCompleteProps> = ({
         selectedKey={selectedItem}
         scrollShadowProps={{ isEnabled: false }}
         onSelectionChange={(key) => handleSelectionChange(key as string)}
-        startContent={<div className="pointer-events-none flex items-center">{countryCodeStartIcon}</div>}
-        endContent={<div className="pointer-events-none flex items-center">{countryCodeEndIcon}</div>}
+        startContent={<div className="pointer-events-none flex items-center">{startIcon}</div>}
+        endContent={<div className="pointer-events-none flex items-center">{endIcon}</div>}
         {...rest}
       >
         {(item) => <AutocompleteItem key={item.key}>{item.label}</AutocompleteItem>}
       </Autocomplete>
-
       {/* Description */}
       <div className={cn('text-content2-400 font-regular text-[12px]', classNames?.description)}>
         {description}
