@@ -1,15 +1,12 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import { PublicRoutes } from "@/routes";
 
-
+import { PrivateRoutes } from "@/routes";
 
 function App() {
-    return (
-        <Router>
-          
-            <PublicRoutes />
-        </Router>
-    );
+  return (
+    <>
+      <PrivateRoutes />
+    </>
+  );
 }
 
 export default App;
