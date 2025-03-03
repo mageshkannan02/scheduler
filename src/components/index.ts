@@ -19,3 +19,4 @@ export { ImageUpload } from './imageUpload'
 export { TableComponent } from './tableComponent'
 export { HeaderComponent } from './header'; 
 export { NumberInputComponent } from './numberInput';
+export { Sidebar } from './sidebar'

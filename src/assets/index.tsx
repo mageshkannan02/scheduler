@@ -18,3 +18,8 @@ export { NotificationIcon } from './notificationIcon';
 export { ContactIcon } from './contactIcon';
 export { QuestionIcon } from './questionIcon';
 export { SchoolIcon } from './schoolIcon';
+export  { LogOutIcon } from './logOut'
+export { BitSchedulerLogo } from './bitSchedulerLogo'
+export { CategorySelectedIcon,CategoryUnSelectedIcon } from './categoryIcon'
+export { ScheduleSelected,ScheduleUnSelected } from './scheduleSection'
+export { FolderSelected,FolderUnSelected} from './folderIcon'

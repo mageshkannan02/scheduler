@@ -37,9 +37,9 @@ const steps = [
 	{ number: 1, label: 'Personal', completed: true },
 	{ number: 2, label: 'Academic', completed: false },
 	{ number: 3, label: 'Communication', completed: false },
-	{ number: 4, label: 'Class advisor', completed: false },
-	{ number: 5, label: 'Health', completed: false },
-	{ number: 6, label: 'Additional info', completed: false },
+	// { number: 4, label: 'Class advisor', completed: false },
+	// { number: 5, label: 'Health', completed: false },
+	// { number: 6, label: 'Additional info', completed: false },
 ];
 const [open, setopen] = React.useState<boolean>(false);
   const [selectedTab, setSelectedTab] = React.useState<string>(tabItems[0]?.key || "");
